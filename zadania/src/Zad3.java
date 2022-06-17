@@ -6,18 +6,18 @@ import java.net.URL;
 public class Zad3 {
     public static void main(String[] args) { //1.
 
-        String currentline;
+        String obecnaLinia;
         boolean adres = false;
 
         try {
-            URL url = new URL("https://youtube.com");
+            URL url = new URL("https://stackoverflow.co/company/contact");
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 
-            while ((currentline = br.readLine()) != null) {
-                String[] slowa = currentline.split(",");
+            while ((obecnaLinia = br.readLine()) != null) {
+                String[] slowa = obecnaLinia.split(",");
 
                 for (String slowo : slowa) {
-                    if (slowo.matches("[a-zA-Z\\d_.+-]+@[a-zA-Z\\d-]+\\\\.[a-zA-Z\\d-.]+")) {
+                    if (slowo.matches("[a-zA-Z\\d_.+-]+@[a-zA-Z\\d-]+\\\\.[a-zA-Z\\d-]+")) {
                         adres = true;
                         System.out.println(slowo);
                     }

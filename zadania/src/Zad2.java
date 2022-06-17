@@ -11,14 +11,14 @@ public class Zad2 {
             URL url = new URL("https://www.youtube.com");
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 
-            String currentline;
+            String obecnaLinia;
             boolean slowo = false;
 //Napisz program, który ze strony internetowej o wskazanym adresie wyświetla tylko te linie, które zawierają znak “@”. [Operacje wejścia-wyjścia + operacja na tekście].
-            while ((currentline = br.readLine()) != null) {
+            while ((obecnaLinia = br.readLine()) != null) {
 
-                if (currentline.contains("@")) {
+                if (obecnaLinia.contains("@")) {
                     slowo = true;
-                    System.out.println(currentline);
+                    System.out.println(obecnaLinia);
                 }
             }
             if (!slowo) {
@@ -27,13 +27,13 @@ public class Zad2 {
 
 
             //Napisz program, który ze strony internetowej o wskazanym adresie, wyświetla tylko te linie, które zawierają znak “@”, pod warunkiem że  nie występują w @media [Operacje wejścia-wyjścia + operacja na tekście].
-            while ((currentline = br.readLine()) != null) {
+            while ((obecnaLinia = br.readLine()) != null) {
 
-                if (currentline.contains("@media")) {
+                if (obecnaLinia.contains("@media")) {
                     continue;
-                } else if (currentline.contains("@")) {
+                } else if (obecnaLinia.contains("@")) {
                     slowo = true;
-                    System.out.println("\n\n" + currentline);
+                    System.out.println("\n\n" + obecnaLinia);
                 }
             }
             if (!slowo) {
